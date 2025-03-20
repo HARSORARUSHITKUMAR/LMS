@@ -64,17 +64,17 @@ const Login = () => {
 
     useEffect(() => {
         if (registerIsSuccess && registerData) {
-            toast.success(registerData.message || "Signup successful.")
+            toast.success(registerData?.message || "Signup successful.")
         }
         if (registerError) {
-            toast.error(registerError.data.message || "Signup Failed");
+            toast.error(registerError?.data?.message || "Signup Failed");
         }
         if (loginIsSuccess && loginData) {
-            toast.success(loginData.message || "Login successful.");
+            toast.success(loginData?.message || "Login successful.");
             navigate("/");
         }
         if (loginError) {
-            toast.error(loginError.data.message || "login Failed");
+            toast.error(loginError?.data?.message || "login Failed");
         }
     }, [
         loginIsLoading,
@@ -108,8 +108,8 @@ const Login = () => {
                                     name="name"
                                     value={signupInput.name}
                                     onChange={(e) => changeInputHandler(e, "signup")}
-                                    placeholder="Eg. patel"
-                                    required="true"
+                                    placeholder="abc"
+                                    required
                                 />
                             </div>
                             <div className="space-y-1">
@@ -120,7 +120,7 @@ const Login = () => {
                                     value={signupInput.email}
                                     onChange={(e) => changeInputHandler(e, "signup")}
                                     placeholder="Eg. abc@gmail.com"
-                                    required="true"
+                                    required
                                 />
                             </div>
                             <div className="space-y-1">
@@ -131,7 +131,7 @@ const Login = () => {
                                     value={signupInput.password}
                                     onChange={(e) => changeInputHandler(e, "signup")}
                                     placeholder="Eg. xyz"
-                                    required="true"
+                                    required
                                 />
                             </div>
                         </CardContent>
@@ -169,7 +169,7 @@ const Login = () => {
                                     value={loginInput.email}
                                     onChange={(e) => changeInputHandler(e, "login")}
                                     placeholder="Eg. abc@gmail.com"
-                                    required="true"
+                                    required
                                 />
                             </div>
                             <div className="space-y-1">
@@ -180,7 +180,7 @@ const Login = () => {
                                     value={loginInput.password}
                                     onChange={(e) => changeInputHandler(e, "login")}
                                     placeholder="Eg. xyz"
-                                    required="true"
+                                    required
                                 />
                             </div>
                         </CardContent>

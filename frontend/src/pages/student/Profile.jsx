@@ -81,7 +81,7 @@ const Profile = () => {
                             src={user?.photoUrl || "https://github.com/shadcn.png"}
                             alt="@shadcn"
                         />
-                        <AvatarFallback>CN</AvatarFallback>
+                        <AvatarFallback>LMS</AvatarFallback>
                     </Avatar>
                 </div>
                 <div>

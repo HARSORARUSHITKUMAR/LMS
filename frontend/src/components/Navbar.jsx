@@ -8,9 +8,9 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import DarkMode from "@/DarkMode";
 import {
     Sheet,
@@ -20,7 +20,7 @@ import {
     SheetHeader,
     SheetTitle,
     SheetTrigger,
-} from "./ui/sheet";
+} from "@/components/ui/sheet";
 import { Separator } from "@radix-ui/react-dropdown-menu";
 import { Link, useNavigate } from "react-router-dom";
 import { useLogoutUserMutation } from "@/features/api/authApi";
@@ -59,15 +59,17 @@ const Navbar = () => {
                     {user ? (
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Avatar>
-                                    <AvatarImage
-                                        src={user?.photoUrl || "https://github.com/shadcn.png"}
-                                        alt="@shadcn"
-                                    />
-                                    <AvatarFallback>LMS</AvatarFallback>
-                                </Avatar>
+                                <button>
+                                    <Avatar>
+                                        <AvatarImage
+                                            src={user?.photoUrl || "https://github.com/shadcn.png"}
+                                            alt="@shadcn"
+                                        />
+                                        <AvatarFallback>LMS</AvatarFallback>
+                                    </Avatar>
+                                </button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent className="w-56">
+                            <DropdownMenuContent className="w-56 z-50">
                                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
@@ -120,7 +122,7 @@ const MobileNavbar = ({ user }) => {
             <SheetTrigger asChild>
                 <Button
                     size="icon"
-                    className="rounded-full hover:bg-gray-200"
+                    className="rounded-full bg-gray-200 hover:bg-gray-200"
                     variant="outline"
                 >
                     <Menu />

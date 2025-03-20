@@ -33,7 +33,7 @@ export const createCheckoutSession = async (req, res) => {
                             name: course.courseTitle,
                             images: [course.courseThumbnail],
                         },
-                        unit_amount: course.coursePrice * 100, // Amount in paise (lowest denomination)
+                        unit_amount: course.coursePrice * 100, // Amount (lowest denomination)
                     },
                     quantity: 1,
                 },
@@ -74,7 +74,7 @@ export const stripeWebhook = async (req, res) => {
 
     try {
         const payloadString = JSON.stringify(req.body, null, 2);
-        const secret = process.env.WEBHOOK_ENDPOINT_SECRET;
+        const secret = process.env.STRIPE_WEBHOOK_SECRET;
 
         const header = stripe.webhooks.generateTestHeaderString({
             payload: payloadString,

@@ -23,7 +23,7 @@ const Course = ({ course }) => {
                         <div className="flex items-center gap-3">
                             <Avatar className="h-8 w-8">
                                 <AvatarImage src={course.creator?.photoUrl || "https://github.com/shadcn.png"} alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
+                                <AvatarFallback>LMS</AvatarFallback>
                             </Avatar>
                             <h1 className="font-medium text-sm">{course.creator?.name}</h1>
                         </div>

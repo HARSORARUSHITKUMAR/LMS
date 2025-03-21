@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.post("/webhook", express.raw({ type: "application/json" }), stripeWebhook);
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173", "https://lmsfrontend-ten.vercel.app"],
     credentials: true
 }));
 
